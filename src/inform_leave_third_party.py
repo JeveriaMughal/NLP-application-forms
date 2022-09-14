@@ -33,7 +33,7 @@ def app():
         # with st.spinner('برائے مہربانی انتظار کریں'):
         #     time.sleep(5)
         save_pdf.make_3rd_party_leave(name,position,dept,date1,total_days,reason,gender,name_informant)
-        st.write("application ready")
+        st.write("درخواست ڈوں لوڈ کے لیے تیار ہے")
     with open("Application.pdf", "rb") as file:
         btn = st.download_button(
              label="درخواست حاصل کریں",
