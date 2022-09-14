@@ -33,6 +33,15 @@ def app():
         # with st.spinner('برائے مہربانی انتظار کریں'):
         #     time.sleep(5)
         save_pdf.make_3rd_party_leave(name,position,dept,date1,total_days,reason,gender,name_informant)
-        st.balloons()
-        st.success("درخواست کی ڈاؤن لوڈ کردہ کاپی آپ کے سسٹم پر موجود ہے۔")
+        st.write("application ready")
+    with open("Application.pdf", "rb") as file:
+        btn = st.download_button(
+             label="Download file",
+             data=file,
+             file_name="Application.pdf",
+             mime="image/png"
+           )
+        if btn:
+            st.balloons()
+            st.success("درخواست کی ڈاؤن لوڈ کردہ کاپی آپ کے سسٹم پر موجود ہے۔")
 
