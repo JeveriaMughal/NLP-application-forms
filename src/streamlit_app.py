@@ -12,7 +12,7 @@ PAGES = {"درخواست برائے مختصر رخصت": pdf_generate,
 "درخواست برائے رخصت اتفاقیہ": form_leave_app,
 "اطلاع برائے رخصت": inform_leave_third_party}
 st.sidebar.title("NLP-L \n Application Form")
-st.sidebar.image("logo-white_old.png")
+st.sidebar.image("src/logo-white_old.png")
 selection = st.sidebar.radio("صفحہ",list (PAGES.keys()))
 page= PAGES[selection]
 page.app()
