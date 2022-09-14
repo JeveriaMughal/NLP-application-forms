@@ -25,7 +25,7 @@ def app():
         total_days = "۱"
         reason = st.text_input("رخصت کی وجہ")
         name_informant = st.text_input("خبر رساں کا نام")
-        pdf_button=st.button("درخواست حاصل کریں")
+        pdf_button=st.button("درخواست تیار کریں")
     with col1:
         st.write(" اطلاع برائے رخصت کا سامپل")
         st.image("src/sample_info-1.png")
@@ -36,7 +36,7 @@ def app():
         st.write("application ready")
     with open("Application.pdf", "rb") as file:
         btn = st.download_button(
-             label="Download file",
+             label="درخواست حاصل کریں",
              data=file,
              file_name="Application.pdf",
              mime="image/png"
