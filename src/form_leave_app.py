@@ -9,8 +9,8 @@ def local_css(file_name):
 
 
 def app():
-    local_css("style.css")
-    st.image("left-1 - Copy.jpg")
+    local_css("src/style.css")
+    st.image("src/left-1 - Copy.jpg")
     st.markdown('<h1 class="urdu-font-big">درخواست کی پی ڈی ایف ڈاون لوڈ کریں</h1>', unsafe_allow_html=True)
     st.write("براہ کرم درج ذیل تفصیلات درج کریں۔")
     col1, col2 = st.columns(2)
@@ -26,7 +26,7 @@ def app():
         pdf_button=st.button("درخواست حاصل کریں")
     with col1:
         st.write(" درخواست فارم برائے اتفاقیہ رخصت کا سامپل")
-        st.image("black_casual_leave-1.png")
+        st.image("src/black_casual_leave-1.png")
     if pdf_button:
         # with st.spinner('برائے مہربانی انتظار کریں'):
         #     time.sleep(5)
