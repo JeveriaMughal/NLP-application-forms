@@ -13,11 +13,11 @@ def make_pdf_short_leave(name,position,dept,date,time1,time2,reason,prev_leaves)
 
 	# Add a page
 	pdf.add_page()
-	pdf.image("left-1 - Copy.jpg", x =0, y = 0, w = 180, h = 40, type = 'JPG', link = '')
+	pdf.image("src/left-1 - Copy.jpg", x =0, y = 0, w = 180, h = 40, type = 'JPG', link = '')
 	# set style and size of font
 	# that you want in the pdf
 	# pdf.add_font('Jameel Noori Nastaleeq', '', '/home/j-mughal/Documents/fonts/all_fonts/PakType-Naskh-Basic.ttf', uni=True)
-	pdf.add_font('Naskh', '', '/home/j-mughal/Documents/fonts/all_fonts/DTNASKH0.TTF', uni=True)
+	pdf.add_font('Naskh', '', 'src/DTNASKH0.TTF', uni=True)
 	# pdf.set_font("Jameel Noori Nastaleeq",style='U', size = 25)
 
 	# create a cell
@@ -132,11 +132,10 @@ def make_pdf_leave(name,position,dept,date1,date2,total_days,reason,address):
 
 	# Add a page
 	pdf.add_page()
-	pdf.image("left-1 - Copy.jpg", x =0, y = 0, w = 180, h = 40, type = 'JPG', link = '')
+	pdf.image("src/left-1 - Copy.jpg", x =0, y = 0, w = 180, h = 40, type = 'JPG', link = '')
 	# set style and size of font
 	# that you want in the pdf
-	# pdf.add_font('Jameel Noori Nastaleeq', '', '/home/j-mughal/Documents/fonts/all_fonts/PakType-Naskh-Basic.ttf', uni=True)
-	pdf.add_font('Naskh', '', '/home/j-mughal/Documents/fonts/all_fonts/DTNASKH0.TTF', uni=True)
+	pdf.add_font('Naskh', '', 'src/DTNASKH0.TTF', uni=True)
 	# pdf.set_font("Jameel Noori Nastaleeq",style='U', size = 25)
 
 	# create a cell
@@ -263,10 +262,10 @@ def make_3rd_party_leave(name,position,dept,date1,total_days,reason,gender,name_
 
 	# Add a page
 	pdf.add_page()
-	pdf.image("left-1 - Copy.jpg", x =0, y = 0, w = 180, h = 40, type = 'JPG', link = '')
+	pdf.image("src/left-1 - Copy.jpg", x =0, y = 0, w = 180, h = 40, type = 'JPG', link = '')
 	# set style and size of font
 	# that you want in the pdf
-	# pdf.add_font('Jameel Noori Nastaleeq', '', '/home/j-mughal/Documents/fonts/all_fonts/PakType-Naskh-Basic.ttf', uni=True)
+	# pdf.add_font('Jameel Noori Nastaleeq', '', 'src/PakType-Naskh-Basic.ttf', uni=True)
 	pdf.add_font('Naskh', '', '/home/j-mughal/Documents/fonts/all_fonts/Amiri-Regular.ttf', uni=True)
 	# pdf.set_font("Jameel Noori Nastaleeq",style='U', size = 25)
 
