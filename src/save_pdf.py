@@ -106,7 +106,7 @@ def make_pdf_short_leave(name,position,dept,date,time1,time2,reason,prev_leaves)
 	#line 10
 	pdf.cell(70, 15, txt = "     ",border=0,ln = 1, align = 'R')
 	pdf.cell(90, 20, txt = "------------------------------",border=0,ln = 0, align = 'R')
-	reshaped_text=arabic_reshaper.reshape(":منظوری برائے نائب ناظم/ سربراہ شعبہ",)
+	reshaped_text=arabic_reshaper.reshape("منظوری برائے نائب ناظم/ سربراہ شعبہ: ",)
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(0,20, txt = reshaped_word,border=0,ln = 0, align = 'R')
 
