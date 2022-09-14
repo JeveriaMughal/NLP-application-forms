@@ -111,7 +111,7 @@ def make_pdf_short_leave(name,position,dept,date,time1,time2,reason,prev_leaves)
 	pdf.cell(0,20, txt = reshaped_word,border=0,ln = 0, align = 'R')
 
 	# save the pdf with name .pdf
-	filename= "درخواست_"+name+"short_leave"+".pdf"
+	filename= "Application.pdf"
 	pdf.output(filename)
 
 
@@ -243,7 +243,7 @@ def make_pdf_leave(name,position,dept,date1,date2,total_days,reason,address):
 	pdf.cell(0,10, txt = reshaped_word,border=0,ln =1, align = 'R')
 
 	# save the pdf with name .pdf
-	filename= "درخواست_"+name+"_leave"+".pdf"
+	filename= "Application.pdf"
 	pdf.output(filename)
 
 def make_3rd_party_leave(name,position,dept,date1,total_days,reason,gender,name_informant):
@@ -311,5 +311,5 @@ def make_3rd_party_leave(name,position,dept,date1,total_days,reason,gender,name_
 	
 
 	# save the pdf with name .pdf
-	filename= "اطلاع_"+name+""+".pdf"
+	filename= "Application.pdf"
 	pdf.output(filename)
