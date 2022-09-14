@@ -23,7 +23,7 @@ def app():
         total_days = st.text_input("رخصت کا کل دورانیہ")
         reason = st.text_input("رخصت کی وجہ")
         address = st.text_input("دوران رخصت پتہ ")
-        pdf_button=st.button("درخواست حاصل کریں")
+        pdf_button=st.button("درخواست تیار کریں")
     with col1:
         st.write(" درخواست فارم برائے اتفاقیہ رخصت کا سامپل")
         st.image("src/black_casual_leave-1.png")
@@ -31,6 +31,15 @@ def app():
         # with st.spinner('برائے مہربانی انتظار کریں'):
         #     time.sleep(5)
         save_pdf.make_pdf_leave(name,position,dept,date1,date2,total_days,reason,address)
-        st.balloons()
-        st.success("درخواست کی ڈاؤن لوڈ کردہ کاپی آپ کے سسٹم پر موجود ہے۔")
+         st.write("درخواست ڈوں لوڈ کے لیے تیار ہے")
+    with open("Application.pdf", "rb") as file:
+        btn = st.download_button(
+             label="درخواست حاصل کریں",
+             data=file,
+             file_name="Application.pdf",
+             mime="image/png"
+           )
+        if btn:
+            st.balloons()
+            st.success("درخواست کی ڈاؤن لوڈ کردہ کاپی آپ کے سسٹم پر موجود ہے۔")
 
