@@ -26,7 +26,7 @@ def app():
         pdf_button=st.button("درخواست حاصل کریں")
     with col1:
         st.write(" درخواست فارم برائے مختصر رخصت کا سامپل")
-        st.image("blank-1.png")
+        st.image("src/blank-1.png")
     if pdf_button:
         # with st.spinner('برائے مہربانی انتظار کریں'):
         #     time.sleep(5)
