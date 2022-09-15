@@ -20,7 +20,7 @@ def app():
         dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","اڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی"), index=0) 
         date1 = st.date_input("رخصٹ کے اغاز کی تاریخ", value=None , min_value=None , max_value=None , key=None)
         date2 = st.date_input("رخصت کے اِختتام کی تاریخ", value=None , min_value=None , max_value=None , key=None)
-        total_days = str((date2-date1).days))
+        total_days = str((date2-date1).days)
         reason = st.text_input("رخصت کی وجہ")
         address = st.text_input("دوران رخصت پتہ ")
         pdf_button=st.button("درخواست تیار کریں")
