@@ -18,9 +18,9 @@ def app():
         name = st.text_input("نام")
         position =st.text_input("عہدہ")
         dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","اڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی"), index=0) 
-        date1 = str(st.date_input("رخصٹ کے اغاز کی تاریخ", value=None , min_value=None , max_value=None , key=None))
-        date2 = str(st.date_input("رخصت کے اِختتام کی تاریخ", value=None , min_value=None , max_value=None , key=None))
-        total_days = st.text_input("رخصت کا کل دورانیہ")
+        date1 = st.date_input("رخصٹ کے اغاز کی تاریخ", value=None , min_value=None , max_value=None , key=None)
+        date2 = st.date_input("رخصت کے اِختتام کی تاریخ", value=None , min_value=None , max_value=None , key=None)
+        total_days = str((date2-date1).days))
         reason = st.text_input("رخصت کی وجہ")
         address = st.text_input("دوران رخصت پتہ ")
         pdf_button=st.button("درخواست تیار کریں")
@@ -30,7 +30,7 @@ def app():
     if pdf_button:
         # with st.spinner('برائے مہربانی انتظار کریں'):
         #     time.sleep(5)
-        save_pdf.make_pdf_leave(name,position,dept,date1,date2,total_days,reason,address)
+        save_pdf.make_pdf_leave(name,position,dept,str(date1),str(date2),total_days,reason,address)
         st.write("درخواست ڈوں لوڈ کے لیے تیار ہے")
     with open("Application.pdf", "rb") as file:
         btn = st.download_button(
