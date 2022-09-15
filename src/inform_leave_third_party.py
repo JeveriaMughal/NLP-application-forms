@@ -20,8 +20,8 @@ def app():
         name = st.text_input("نام")
         position =st.text_input("عہدہ")
         dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","اڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی"), index=0)
-        date1 = str(datetime.date.today()) 
-        date2 = str(st.date_input("رخصٹ کے اختتام کی تاریخ", value=None , min_value=None , max_value=None , key=None))
+        date1 = datetime.date.today()
+        date2 = st.date_input("رخصٹ کے اختتام کی تاریخ", value=None , min_value=None , max_value=None , key=None)
         total_days = "۱"
         reason = st.text_input("رخصت کی وجہ")
         name_informant = st.text_input("خبر رساں کا نام")
