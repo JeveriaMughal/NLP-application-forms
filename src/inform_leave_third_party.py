@@ -19,9 +19,9 @@ def app():
         gender = st.selectbox("جنس" , ("  ","مرد","عورت"), index=0) 
         name = st.text_input("نام")
         position =st.text_input("عہدہ")
-        dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","اڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی"), index=0) 
-        #date1 = str(st.date_input("رخصٹ کے اغاز کی تاریخ", value=None , min_value=None , max_value=None , key=None))
-        date1 = str(datetime.date.today())
+        dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","اڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی"), index=0)
+        date1 = str(datetime.date.today()) 
+        date2 = str(st.date_input("رخصٹ کے اختتام کی تاریخ", value=None , min_value=None , max_value=None , key=None))
         total_days = "۱"
         reason = st.text_input("رخصت کی وجہ")
         name_informant = st.text_input("خبر رساں کا نام")
@@ -32,7 +32,7 @@ def app():
     if pdf_button:
         # with st.spinner('برائے مہربانی انتظار کریں'):
         #     time.sleep(5)
-        save_pdf.make_3rd_party_leave(name,position,dept,date1,total_days,reason,gender,name_informant)
+        save_pdf.make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender,name_informant)
         st.write("درخواست ڈوں لوڈ کے لیے تیار ہے")
     with open("Application.pdf", "rb") as file:
         btn = st.download_button(
