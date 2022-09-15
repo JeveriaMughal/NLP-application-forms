@@ -116,10 +116,6 @@ def make_pdf_short_leave(name,position,dept,date,time1,time2,reason,prev_leaves)
 
 
 
-# name="جویریہ مغل "
-# date="اگست 23، 2022"
-# reason="طبیعت ناساز"
-# make_pdf(name,date,reason)
 def make_pdf_leave(name,position,dept,date1,date2,total_days,reason,address):
 	from fpdf import FPDF
 
@@ -252,7 +248,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	import arabic_reshaper
 	from bidi.algorithm import get_display
 	from datetime import date 
-	no_of_days = (date2-date1).days
+	no_of_days = str((date2-date1).days)
 	
 	if gender == "مرد":
 		gender_pronoun="محترم "
@@ -288,7 +284,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	if date1==date2:
 		text=gender_pronoun+name+" ( "+position+" ) نے بذریعہ ٹیلی فون اطلاع دی ہے کہ وہ  "+""+date+" کو "+"\n"+reason+" کے باعث دفتر حاضر ہونے سے قاصر ہیں۔لہذا ایک یوم کی رخصت عنایت فرمائیں۔ "
 	else:
-		text=gender_pronoun+name+" ( "+position+" ) نے بذریعہ ٹیلی فون اطلاع دی ہے کہ وہ  "+str(date1)+" تا "+str(date2)+"\n"+" کو "+reason+" کے باعث دفتر حاضر ہونے سے قاصر ہیں۔لہذا  "+no_of_days+" ایام کی رخصت عنایت فرمائیں۔"
+		text=gender_pronoun+name+" ( "+position+" ) نے بذریعہ ٹیلی فون اطلاع دی ہے کہ وہ  "+str(date1)+" تا "+"\n"+str(date2)+" کو "+reason+" کے باعث دفتر حاضر ہونے سے قاصر ہیں۔لہذا  "+no_of_days+" ایام کی رخصت عنایت فرمائیں۔"
 	reshaped_text=arabic_reshaper.reshape(text)
 	reshaped_word=get_display(reshaped_text)
 	pdf.multi_cell(0, 15, txt =reshaped_word ,border=0, align = 'R')
@@ -299,7 +295,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	reshaped_text=arabic_reshaper.reshape(name_informant)
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(40,10, txt = reshaped_word,border=0,ln = 1, align = 'C')
-	pdf.cell(40,10, txt = date1 ,border=0,ln = 1, align = 'C')
+	pdf.cell(40,10, txt = str(date1) ,border=0,ln = 1, align = 'C')
 	#line 3
 	if (dept == "اپلیکیشن" or dept =="بصری حروف شناسی" or dept=="تحقیق و ترقی"):
 		pdf.cell(70, 15, txt = "     ",border=0,ln = 1, align = 'R')
