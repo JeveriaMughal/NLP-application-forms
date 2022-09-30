@@ -16,8 +16,20 @@ def app():
     col1, col2 = st.columns(2)
     with col2:
         name = st.text_input("نام")
-        position =st.text_input("عہدہ")
-        dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","اڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی"), index=0) 
+        position =st.selectbox("عہدہ",
+                                ("",
+                                "اسسٹنٹ ایڈمن کم اکائونٹس",
+                                "اسسٹنٹ ہارڈوئیر اینڈ نیٹ ورک",
+                                "پروگرام مینجر(ایپلی کیشنز)",
+                                "(بصری حروف شناسی)پروگرام مینجر",
+                                "پروگرام مینجر(تحقیق و ترقی)",
+                                "ٹیم ممبر (ایپلی کیشنز)",
+                                "ٹیم ممبر (بصری حروف شناسی)",
+                                "ٹیم ممبر (تحقیق و ترقی)",
+                                "ٹیم ممبر (زبان)",
+                                "ماہرِ زبان/لینگویج انجینئر",
+                                "نائب قاصد"))
+        dept = st.selectbox("شعبہ" , ("  ","اپلیکیشنز","ایڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی","لسانیات"), index=0) 
         date1 = st.date_input("رخصٹ کے اغاز کی تاریخ", value=None , min_value=None , max_value=None , key=None)
         date2 = st.date_input("رخصت کے اِختتام کی تاریخ", value=None , min_value=None , max_value=None , key=None)
         total_days = str((date2-date1).days)
