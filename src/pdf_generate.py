@@ -29,7 +29,7 @@ def app():
                                 "ٹیم ممبر (زبان)",
                                 "ماہرِ زبان/لینگویج انجینئر",
                                 "نائب قاصد"))
-        dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","ایڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی"), index=0)  
+        dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","ایڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی","لسانیات"), index=0)  
         date = str(st.date_input("تاریخ", value=None , min_value=None , max_value=None , key=None))
         reason = st.text_input("رخصت کی وجہ")
         time1 = st.text_input("وقتِ اغاز")
