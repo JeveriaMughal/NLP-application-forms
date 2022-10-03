@@ -254,7 +254,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	import arabic_reshaper
 	from bidi.algorithm import get_display
 	from datetime import date 
-	no_of_days = str((date2-date1).days)
+	no_of_days = str((date2-date1).days+1)
 	
 	if gender == "مرد":
 		gender_pronoun="محترم "
