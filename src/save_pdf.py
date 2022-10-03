@@ -283,7 +283,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(200, 55, txt = reshaped_word,border=0,ln = 1, align = 'C')
 	# pdf.set_font("Jameel Noori Nastaleeq",style='', size = 15) 
-	pdf.set_font("Naskh",style='', size = 13)
+	pdf.set_font("Naskh",style='', size = 15)
 	reshaped_text=arabic_reshaper.reshape(str(date1))
 	date=get_display(reshaped_text)
 	if date1==date2:
