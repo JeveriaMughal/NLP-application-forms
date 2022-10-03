@@ -34,7 +34,7 @@ def app():
         dept = st.selectbox("شعبہ" , ("  ","اپلیکیشن","ایڈمِن","آئی ٹی","بصری حروف شناسی","تحقیق و ترقی","لسانیات"), index=0)
         date1 = datetime.date.today()
         date2 = st.date_input("رخصٹ کے اختتام کی تاریخ", value=None , min_value=None , max_value=None , key=None)
-        total_days = "۱"
+        total_days = str((date2-date1).days+1)
         reason = st.text_input("رخصت کی وجہ")
         name_informant = st.text_input("خبر رساں کا نام")
         pdf_button=st.button("درخواست تیار کریں")
