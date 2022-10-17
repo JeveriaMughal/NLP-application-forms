@@ -291,10 +291,8 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 					" ( ",
 					position,
 					" ) نے",
-					" بذریعہ ",
-			  		"ٹیلی فون",
-					" اطلاع ",
-			  		"دی ہے",
+					" بذریعہ ٹیلی فون",
+					" اطلاع دی ہے",
 					" کہ وہ  ",
 					date,
 					" کو ",
@@ -305,16 +303,13 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 					" قاصر ہی۔",
 					"لہذا ایک",
 					" یوم کی رخصت ",
-					"عنایت فرمائی جائے۔ "]
+					"عنایت فرمائیں۔ "]
 	else:
 		sentence=[gender_pronoun+name,
 					" ( ",
 					position,
-					" ) نے بذریعہ",
-			  		" ٹیلی فون",
-					" اطلاع ",
-			  		"دی ہے ",
-			  		"کہ وہ  ",
+					" ) نے بذریعہ ٹیلی فون",
+					" اطلاع دی ہے کہ وہ  ",
 					str(date1),
 					" تا ",
 					str(date2),
@@ -328,7 +323,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 					no_of_days,
 					" ایام ",
 					"کی رخصت ",
-					"عنایت فرمائی جائے۔"]
+					"عنایت فرمائیں۔"]
 	max_len=90
 	sub_sen1=""
 	sub_sen2=""
@@ -355,20 +350,9 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	# 	text=gender_pronoun+name+" ( "+position+" ) نے بذریعہ ٹیلی فون اطلاع دی ہے کہ وہ  "+""+date+" کو "+"\n"+reason+" کے باعث دفتر حاضر ہونے سے قاصر ہیں۔لہذا ایک یوم کی رخصت عنایت فرمائیں۔ "
 	# else:
 	# 	text=gender_pronoun+name+" ( "+position+" ) نے بذریعہ ٹیلی فون اطلاع دی ہے کہ وہ  "+str(date1)+" تا "+str(date2)+"\n"+" کو "+reason+" کے باعث دفتر حاضر ہونے سے قاصر ہیں۔لہذا  "+no_of_days+" ایام کی رخصت عنایت فرمائیں۔"
-# 	reshaped_text=arabic_reshaper.reshape(text)
-# 	reshaped_word=get_display(reshaped_text)
-# 	pdf.multi_cell(0, 15, txt =reshaped_word ,border=0, align = 'R')
-	reshaped_text=arabic_reshaper.reshape(sub_sen1)
+	reshaped_text=arabic_reshaper.reshape(text)
 	reshaped_word=get_display(reshaped_text)
-	pdf.cell(0, 15, txt =reshaped_word ,border=0, align = 'R',ln=1)
-	if line1 ==1:
-		reshaped_text=arabic_reshaper.reshape(sub_sen2)
-		reshaped_word=get_display(reshaped_text)
-		pdf.cell(0, 15, txt =reshaped_word ,border=0, align = 'R',ln=1)
-	if line2 ==1:
-		reshaped_text=arabic_reshaper.reshape(sub_sen3)
-		reshaped_word=get_display(reshaped_text)
-		pdf.cell(0, 15, txt =reshaped_word ,border=0, align = 'R',ln=1)
+	pdf.multi_cell(0, 15, txt =reshaped_word ,border=0, align = 'R')
 
 	#line 2 
 	pdf.cell(70, 15, txt = "     ",border=0,ln = 1, align = 'R')
@@ -376,7 +360,16 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	reshaped_text=arabic_reshaper.reshape(name_informant)
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(40,10, txt = reshaped_word,border=0,ln = 1, align = 'C')
+	reshaped_text=arabic_reshaper.reshape("(اطلاع دینے والے کا نام)")
+	reshaped_word=get_display(reshaped_text)
+	pdf.cell(40,10, txt = reshaped_word,border=0,ln = 1, align = 'C')
 	pdf.cell(40,10, txt =str( date1) ,border=0,ln = 1, align = 'C')
+	#line 10
+	pdf.cell(70, 15, txt = "     ",border=0,ln = 1, align = 'R')
+	pdf.cell(140, 10, txt = "--------------------------------------------------",border=0,ln = 0, align = 'R')
+	reshaped_text=arabic_reshaper.reshape("تفصیل استحقاق رخصت:",)
+	reshaped_word=get_display(reshaped_text)
+	pdf.cell(0,10, txt = reshaped_word,border=0,ln = 1, align = 'R')
 	#line 3
 	if (dept == "اپلیکیشن" or dept =="بصری حروف شناسی" or dept=="تحقیق و ترقی"):
 		pdf.cell(70, 15, txt = "     ",border=0,ln = 1, align = 'R')
@@ -390,7 +383,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	reshaped_text=arabic_reshaper.reshape(" پرنسپل انوسٹیگیٹر ")
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(0,10, txt = reshaped_word,border=0,ln = 1, align = 'R')
-	
+
 
 	# save the pdf with name .pdf
 	filename= "Application.pdf"
