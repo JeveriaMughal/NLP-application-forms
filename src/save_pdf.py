@@ -324,7 +324,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 					" ایام ",
 					"کی رخصت ",
 					"عنایت فرمائیں۔"]
-	max_len=85
+	max_len=80
 	sub_sen1=""
 	sub_sen2=""
 	sub_sen3=""
