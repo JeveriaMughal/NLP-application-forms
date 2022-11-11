@@ -300,7 +300,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 					" کے باعث",
 					" دفتر حاضر",
 					" ہونے سے",
-					" قاصر ہی۔",
+					" قاصر ہیں۔",
 					"لہذا ایک",
 					" یوم کی رخصت ",
 					"عنایت فرمائیں۔ "]
@@ -318,7 +318,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 					" کے باعث ",
 					"دفتر حاضر ",
 					"ہونے سے ",
-					"قاصر ہی۔ ",
+					"قاصر ہ۔ ",
 					"لہذا ",
 					no_of_days,
 					" ایام ",
@@ -363,7 +363,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	reshaped_text=arabic_reshaper.reshape("(اطلاع دینے والے کا نام)")
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(40,10, txt = reshaped_word,border=0,ln = 1, align = 'C')
-	pdf.cell(40,10, txt =str( date1) ,border=0,ln = 1, align = 'C')
+	pdf.cell(40,10, txt =str( date1.strftime("%d-%m-%Y")) ,border=0,ln = 1, align = 'C')
 	#line 10
 	pdf.cell(140, 10, txt = "--------------------------------------------------",border=0,ln = 0, align = 'R')
 	reshaped_text=arabic_reshaper.reshape("تفصیل استحقاق رخصت:",)
