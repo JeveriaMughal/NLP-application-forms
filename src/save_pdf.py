@@ -379,7 +379,7 @@ def make_3rd_party_leave(name,position,dept,date1,date2,total_days,reason,gender
 	#line 4
 	pdf.cell(70, 15, txt = "     ",border=0,ln = 1, align = 'R')
 	pdf.cell(0, 10, txt = "--------------------------------------------------",border=0,ln = 1, align = 'R')
-	reshaped_text=arabic_reshaper.reshape(" پرنسپل انوسٹیگیٹر ")
+	reshaped_text=arabic_reshaper.reshape("  جناب پرنسپل انوسٹیگیٹر ")
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(0,10, txt = reshaped_word,border=0,ln = 1, align = 'R')
 
