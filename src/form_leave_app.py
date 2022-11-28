@@ -42,7 +42,7 @@ def app():
     if pdf_button:
         # with st.spinner('برائے مہربانی انتظار کریں'):
         #     time.sleep(5)
-        save_pdf.make_pdf_leave(name,position,dept,str(date1),str(date2),total_days,reason,address)
+        save_pdf.make_pdf_leave(name,position,dept,(date1),(date2),total_days,reason,address)
         st.write("درخواست ڈوں لوڈ کے لیے تیار ہے")
     with open("Application.pdf", "rb") as file:
         btn = st.download_button(

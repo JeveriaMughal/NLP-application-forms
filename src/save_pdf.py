@@ -56,9 +56,9 @@ def make_pdf_short_leave(name,position,dept,date,time1,time2,reason,prev_leaves)
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(0, 20, txt = reshaped_word,border=0,ln = 1, align = 'R')
     #line 4 
-	reshaped_text=arabic_reshaper.reshape(date)
-	reshaped_word=get_display(reshaped_text)
-	pdf.cell(150, 20, txt = reshaped_word,border=0,ln = 0, align = 'R')
+	# reshaped_text=arabic_reshaper.reshape(str(date.strftime("%d-%m-%Y")))
+	# reshaped_word=get_display(reshaped_text)
+	pdf.cell(150, 20, txt = str(date.strftime("%d-%m-%Y")),border=0,ln = 0, align = 'R')
 
 	reshaped_text=arabic_reshaper.reshape("تاریخ:",)
 	reshaped_word=get_display(reshaped_text)
@@ -176,17 +176,17 @@ def make_pdf_leave(name,position,dept,date1,date2,total_days,reason,address):
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(0, 10, txt = reshaped_word,border=0,ln = 1, align = 'R')
     #line 4 
-	reshaped_text=arabic_reshaper.reshape(date2)
-	reshaped_word=get_display(reshaped_text)
-	pdf.cell(55, 10, txt =reshaped_word,border=0,ln = 0, align = 'R')
+	# reshaped_text=arabic_reshaper.reshape(date2)
+	# reshaped_word=get_display(reshaped_text)
+	pdf.cell(55, 10, txt = str(date2.strftime("%d-%m-%Y")),border=0,ln = 0, align = 'R')
 
 	reshaped_text=arabic_reshaper.reshape("تا")
 	reshaped_word=get_display(reshaped_text)
 	pdf.cell(20, 10, txt =reshaped_word,border=0,ln = 0, align = 'R')
 
-	reshaped_text=arabic_reshaper.reshape(date1)
-	reshaped_word=get_display(reshaped_text)
-	pdf.cell(55, 10, txt =reshaped_word,border=0,ln = 0, align = 'R')
+	# reshaped_text=arabic_reshaper.reshape(date1)
+	# reshaped_word=get_display(reshaped_text)
+	pdf.cell(55, 10, txt = str(date1.strftime("%d-%m-%Y")),border=0,ln = 0, align = 'R')
 
 	reshaped_text=arabic_reshaper.reshape("رخصت کا دورانیہ:")
 	reshaped_word=get_display(reshaped_text)
